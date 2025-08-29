@@ -1,0 +1,101 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    /* Gallery Layout */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 50vh;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    /* Hover effect */
+    .gallery img:hover {
+      transform: scale(1.05);
+      filter: brightness(80%);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    /* Navigation buttons */
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .prev { left: 20px; }
+    .next { right: 20px; }
+
+    .close {
+      position: absolute;
+      top: 20px; right: 30px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Bonus: filter buttons */
+    .filter-btns {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .filter-btns button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #333;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .filter-btns button:hover {
+      background: #555;
+    }
+
+    /* Responsive */
+    @media(max-width: 600px) {
+      .btn { font-size: 1.5rem; padding: 5px 12px; }
+    }
+  
